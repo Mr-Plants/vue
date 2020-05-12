@@ -8,7 +8,7 @@ var apiURL = 'https://api.github.com/repos/vuejs/vue/commits?per_page=3&sha='
 
 new Vue({
 
-  el: '#demo',
+  // el: '#demo',
 
   data: {
     branches: ['master', 'dev'],
@@ -53,4 +53,4 @@ new Vue({
       }
     }
   }
-})
+}).$mount('#demo')
