@@ -32,6 +32,7 @@ export const emptyNode = new VNode('', {}, [])
 
 const hooks = ['create', 'activate', 'update', 'remove', 'destroy']
 
+// todo vue如何判断两个自定义组件是否相同
 function sameVnode (a, b) {
   return (
     a.key === b.key && (
@@ -697,6 +698,7 @@ export function createPatchFunction (backend) {
     }
   }
 
+  // todo 进行diff算法
   return function patch (oldVnode, vnode, hydrating, removeOnly) {
     if (isUndef(vnode)) {
       if (isDef(oldVnode)) invokeDestroyHook(oldVnode)
