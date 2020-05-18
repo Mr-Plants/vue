@@ -2,6 +2,7 @@ const path = require('path')
 
 const resolve = p => path.resolve(__dirname, '../', p)
 
+// todo 所有版本的入口
 module.exports = {
   vue: resolve('src/platforms/web/entry-runtime-with-compiler'),
   compiler: resolve('src/compiler'),
