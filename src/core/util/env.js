@@ -54,6 +54,7 @@ export const isServerRendering = () => {
 // detect devtools
 export const devtools = inBrowser && window.__VUE_DEVTOOLS_GLOBAL_HOOK__
 
+// todo 判断是否是原生方法
 /* istanbul ignore next */
 export function isNative (Ctor: any): boolean {
   return typeof Ctor === 'function' && /native code/.test(Ctor.toString())

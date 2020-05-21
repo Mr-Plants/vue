@@ -54,6 +54,7 @@ export function initMixin (Vue: Class<Component>) {
     initRender(vm)
     // todo 触发beforeCreate钩子
     callHook(vm, 'beforeCreate')
+    // todo 这里的执行顺序可以研究一下
     initInjections(vm) // resolve injections before data/props
     initState(vm)
     initProvide(vm) // resolve provide after data/props
