@@ -63,7 +63,7 @@ export function isNative (Ctor: any): boolean {
 export const hasSymbol =
   typeof Symbol !== 'undefined' && isNative(Symbol) &&
   typeof Reflect !== 'undefined' && isNative(Reflect.ownKeys)
-
+// todo 兼容es6的Set
 let _Set
 /* istanbul ignore if */ // $flow-disable-line
 if (typeof Set !== 'undefined' && isNative(Set)) {

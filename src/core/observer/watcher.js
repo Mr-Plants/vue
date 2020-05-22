@@ -125,6 +125,7 @@ export default class Watcher {
   /**
    * Add a dependency to this directive.
    */
+  // todo 如果没有这个dep，就收集这个dep
   addDep (dep: Dep) {
     const id = dep.id
     if (!this.newDepIds.has(id)) {
