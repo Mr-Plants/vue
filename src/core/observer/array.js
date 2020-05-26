@@ -6,6 +6,7 @@
 import { def } from '../util/index'
 
 const arrayProto = Array.prototype
+// todo 是一个拥有Array原型的的对象
 export const arrayMethods = Object.create(arrayProto)
 
 const methodsToPatch = [

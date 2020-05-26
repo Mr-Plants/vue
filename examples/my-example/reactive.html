@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <h2>对象</h2>
+  <div>{{info}}</div>
+  <button @click="info.address='beijing'">add</button>
+  <button @click="info.name='rose'">edit</button>
+  <button @click="deleteProp">delete</button>
+  <h2>数组</h2>
+  <div>{{arr[0]}}</div>
+
+  <div>{{objArr[0]}}</div>
+</div>
+<script src="../../dist/vue.js"></script>
+<script>
+  const app = new Vue({
+    data() {
+      return {
+        arr: [1, 2, 3],
+        objArr: [{
+          name: 'foo'
+        }],
+        info: {
+          name: 'jack',
+          age: 23
+        }
+      }
+    },
+    methods: {
+      deleteProp() {
+        delete this.info.age;
+      }
+    }
+  }).$mount('#app')
+</script>
+</body>
+</html>
