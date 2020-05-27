@@ -27,6 +27,7 @@ methodsToPatch.forEach(function (method) {
   const original = arrayProto[method]
   def(arrayMethods, method, function mutator (...args) {
     const result = original.apply(this, args)
+    // todo 调用arr原型上的方法，内部this指向arr
     const ob = this.__ob__
     let inserted
     switch (method) {

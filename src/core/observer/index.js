@@ -43,6 +43,7 @@ export class Observer {
     this.value = value
     this.dep = new Dep()
     this.vmCount = 0
+    // todo 定义__ob__，将自己（ob实例）添加为数据的不可枚举属性
     def(value, '__ob__', this)
     if (Array.isArray(value)) {
       if (hasProto) {
