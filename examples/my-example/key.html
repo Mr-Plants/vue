@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    input {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+<div id="app">
+
+  <ul>
+    <!--    <li v-for="item in list" :key="item">{{item}}</li>-->
+    <!--    <li v-for="item in list">{{item}}</li>-->
+  </ul>
+  <!--  <h2>不使用key，仔细看上面元素的变化</h2>-->
+  <div>
+    <input v-for="item in list" :value="item"/>
+  </div>
+  <h2>不使用key，仔细看上面元素焦点的变化</h2>
+</div>
+<script src="../../dist/vue.js"></script>
+<script>
+  const app = new Vue({
+    data() {
+      return {
+        list: ['A', 'B', 'C', 'D', 'E']
+      }
+    },
+    el: '#app',
+    mounted() {
+      setTimeout(() => {
+        this.list.unshift('F')
+      }, 2000)
+    }
+  })
+</script>
+</body>
+</html>
